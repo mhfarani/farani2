@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{ user.username }}</h1>
+    {% for bupr in buyproduct %}
+        {% if bupr.buyer.username == user.username  %}
+
+        <p>{{ bupr.product.name }}</p>
+
+        <p>price={{ bupr.product.price }}</p>
+
+        {% endif %}
+
+    {% endfor %}
+
+
+  {% endblock content %}

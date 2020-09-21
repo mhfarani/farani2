@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div >
+        <form method="post">
+            {% csrf_token %}
+                <legend >Login</legend>
+                <fieldset>
+                   {{ form.as_p }}
+                </fieldset>
+
+                <button class="btn btn-outline-info " type="submit">sign IN</button>
+        </form>
+        Need an acount?
+        <a class="ml-2" href="{% url 'register' %}">Sign UP</a>
+        <h3>or</h3>
+        {% load socialaccount %}
+        <a href="{% provider_login_url 'google' %}">Login with Google acount</a>
+    </div>
+  {% endblock content %}

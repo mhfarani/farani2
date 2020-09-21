@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {% for pr in product %}
+        <h1>{{  pr.name }}</h1>
+        <p>description={{ pr.Description }}</p>
+        <p>price={{ pr.price }}</p>
+        <p>exist={{ pr.exist }}</p>
+        <form action= "{% url 'add'  forloop.counter %}" method="get"  >
+        <button type="submit">ADD</button>
+        </form>
+
+    {% endfor %}
+{% endblock content %}
